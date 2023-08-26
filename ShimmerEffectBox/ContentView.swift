@@ -9,13 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+            Color.gray
+            
+            ScrollView {
+                LazyVStack(spacing: 1) {
+                    ForEach(0..<5) { _ in
+                        ContentLoader()
+                    }
+                }
+            }
         }
-        .padding()
     }
 }
 
